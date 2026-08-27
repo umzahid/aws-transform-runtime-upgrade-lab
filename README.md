@@ -164,6 +164,14 @@ AWS describes a four-phase cycle:
       genuinely removed in JDK 17 (JEP 407), verified empirically to break
       a naive version bump. `AWS/java-version-upgrade` found and correctly
       fixed it with no hints given.
+- [x] Phase 2d — [poc-python-datetime-deprecation/README.md](poc-python-datetime-deprecation/README.md):
+      a second, harder Python case. `poc-python` above only needed a
+      typing-style modernization; this one deliberately uses
+      `datetime.datetime.utcnow()` — genuinely deprecated since Python 3.12,
+      verified to raise a real `DeprecationWarning` locally.
+      `AWS/python-version-upgrade` replaced it with
+      `datetime.now(datetime.timezone.utc)`, confirmed to genuinely remove
+      the warning, with no hints given.
 
 ## Sources
 
