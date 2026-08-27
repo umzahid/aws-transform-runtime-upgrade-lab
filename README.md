@@ -158,6 +158,12 @@ AWS describes a four-phase cycle:
   - [poc-nodejs/README.md](poc-nodejs/README.md) — `AWS/nodejs-version-upgrade`,
     12 → 22 (`new Buffer()` → `Buffer.from()`, deprecation warning
     confirmed gone after upgrade)
+- [x] Phase 2c — [poc-java-rmi-removal/README.md](poc-java-rmi-removal/README.md):
+      a second, harder Java case. `poc-java` above only needed a version
+      bump; this one deliberately uses `java.rmi.activation` — an API
+      genuinely removed in JDK 17 (JEP 407), verified empirically to break
+      a naive version bump. `AWS/java-version-upgrade` found and correctly
+      fixed it with no hints given.
 
 ## Sources
 
