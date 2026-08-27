@@ -1,0 +1,13 @@
+{
+  "name": "atx-poc-nodejs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Toy Node.js app for the AWS Transform general-purpose Node.js version-upgrade POC",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/local-invoke.js"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}
