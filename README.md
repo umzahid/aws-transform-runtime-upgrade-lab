@@ -146,6 +146,18 @@ AWS describes a four-phase cycle:
 - [x] Phase 1 — research and write up how the capability works (this doc)
 - [x] Phase 2 — hands-on POC: done, see [poc/README.md](poc/README.md)
       for the full write-up (before/after diff + invoke output)
+- [x] Phase 2b — multi-language local POC: done, no AWS deployment (unlike
+      Phase 2's Lambda POC, which deployed to real AWS). Proved AWS
+      Transform's general-purpose managed transformations across three
+      languages, each executed for real on the local toolchain after the
+      upgrade:
+  - [poc-python/README.md](poc-python/README.md) — `AWS/python-version-upgrade`,
+    3.8-style → 3.13 (`typing.Dict`/`Optional` → `dict`/`str | None`)
+  - [poc-java/README.md](poc-java/README.md) — `AWS/java-version-upgrade`,
+    8 → 17 (`maven.compiler.release` bump)
+  - [poc-nodejs/README.md](poc-nodejs/README.md) — `AWS/nodejs-version-upgrade`,
+    12 → 22 (`new Buffer()` → `Buffer.from()`, deprecation warning
+    confirmed gone after upgrade)
 
 ## Sources
 
