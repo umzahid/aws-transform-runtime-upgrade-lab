@@ -404,14 +404,19 @@ Note: deliberately not run against real AWS in this task — the function is sti
 
 - [ ] **Step 1: Run the transformation**
 
+Real flags confirmed via `atx custom def exec --help` (Task 1 Step 3, `atx` 3.11.0): `--configuration` takes free-form key=value pairs, and there's a separate `--build-command` flag for the validation gate (not auto-detected from `package.json`). Running unattended via script, not an interactive terminal, so `--non-interactive` and `--trust-all-tools` are required or the command hangs waiting for prompts.
+
 ```bash
 cd poc/lambda
 atx custom def exec \
   --code-repository-path . \
   --transformation-name AWS/lambda-nodejs-runtime-upgrade \
-  --configuration additionalPlanContext="Target Node.js 24"
+  --build-command "node test/local-invoke.js" \
+  --configuration additionalPlanContext="Target Node.js 24" \
+  --non-interactive \
+  --trust-all-tools
 ```
-Expected: completes, output names the branch it created and reports the validation command (`npm test` → `node test/local-invoke.js`) passing. If Task 1 Step 3 found different real flag names, use those instead of the ones above.
+Expected: completes, output names the branch it created and reports the validation command (`node test/local-invoke.js`) passing.
 
 - [ ] **Step 2: Confirm the branch exists**
 
