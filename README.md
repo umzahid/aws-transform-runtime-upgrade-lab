@@ -144,9 +144,8 @@ AWS describes a four-phase cycle:
 ## Status
 
 - [x] Phase 1 — research and write up how the capability works (this doc)
-- [ ] Phase 2 — hands-on POC: install `atx`, pick a target runtime and
-      AWS account, run a real transformation against a sample repo,
-      capture the before/after diff and validation output
+- [x] Phase 2 — hands-on POC: done, see [poc/README.md](poc/README.md)
+      for the full write-up (before/after diff + invoke output)
 
 ## Sources
 
