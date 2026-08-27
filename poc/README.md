@@ -9,9 +9,15 @@ end to end.
 
 - `atx` CLI 3.11.0, installed via `curl -fsSL https://transform-cli.awsstatic.com/install.sh | bash`
 - AWS profile `default`, account `043309363336`, region `us-east-1`
-- `poc/lambda/` is its own nested git repo (separate from this lab's parent
-  repo) — required because `atx` needs `--code-repository-path` to point at
-  a real git repository
+- `poc/lambda/` was a separate nested git repo during the `atx` run itself
+  (required because `atx` needs `--code-repository-path` to point at a real
+  git repository). Its real commit history, preserved for the record:
+  - `e91b475` Add toy Lambda handler (old callback-style, pre-upgrade) + local test harness
+  - `b2cd658` Step 1: Upgrade Lambda handler from callback pattern to async/await for Node.js 24 compatibility, update engines field to >=24. Build status: Success — the actual commit `atx` authored
+  - `6c1f705` Merge AWS Transform Lambda Node.js runtime upgrade
+  After the upgrade was verified, the nested repo was flattened into this
+  parent repo (its `.git` removed) so the actual source code — not just
+  scripts and JSON results — is tracked and pushed here.
 
 ## Commands, in order
 

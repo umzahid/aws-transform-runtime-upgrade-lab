@@ -1,0 +1,13 @@
+{
+  "name": "atx-poc-lambda",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Toy Lambda handler for the AWS Transform Lambda Node.js runtime upgrade POC",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/local-invoke.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
