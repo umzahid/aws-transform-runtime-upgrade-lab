@@ -172,6 +172,13 @@ AWS describes a four-phase cycle:
       `AWS/python-version-upgrade` replaced it with
       `datetime.now(datetime.timezone.utc)`, confirmed to genuinely remove
       the warning, with no hints given.
+- [x] Phase 2e — [poc-java-custom-transform/README.md](poc-java-custom-transform/README.md):
+      first use of a **custom** transformation instead of an AWS-managed
+      one. A plain-language `SKILL.md`, published via `atx custom def
+      publish`, fixes the exact gap `poc-java` left behind — converts a
+      hand-rolled immutable POJO into a Java 16+ `record` and correctly
+      updates call sites (`getMessage()` → `message()`), not just the
+      declaration.
 
 ## Sources
 
